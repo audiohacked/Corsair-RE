@@ -31,20 +31,20 @@
 0x08 - FF - Unknown
 0x09 - FF - Unknown
 0x0A - FF - Unknown
-0x0B - 00 - Fan 1 External ENable = 0x01
-0x0C - 00 - Fan 1 Unknown
-0x0D - 00 - Fan 1 Unknown
+0x0B - 00 - Fan 1 Mode: Custom Curve = 0x00, External Enable = 0x01, Fixed % = 0x02, Fixed RPM = 0x04
+0x0C - 00 - Fan 1 Fixed RPM LSB
+0x0D - 00 - Fan 1 Fixed RPM MSB
 0x0E - 00 - Fan 1 Unknown
 0x0F - 00 - Fan 1 External Temp Feed
 
-0x10 - 00 - Fan 1? Unknown
-0x11 - 00 - Fan 2 External Enable = 0x01
-0x12 - 00 - Fan 2 Unknown
-0x13 - 00 - Fan 2 Unknown
+0x10 - 00 - Fan 1 Fixed %: 255 * duty_cycle
+0x11 - 00 - Fan 2 Mode: Custom Curve = 0x00, External Enable = 0x01, Fixed % = 0x02, Fixed RPM = 0x04
+0x12 - 00 - Fan 2 Fixed RPM LSB
+0x13 - 00 - Fan 2 Fixed RPM MSB
 0x14 - 00 - Fan 2 Unknown
 0x15 - 38 - Fan 2 External Temp Feed
-0x16 - 00 - Fan 2? Unknown
-0x17 - 01 - Unknown
+0x16 - 00 - Fan 2 Fixed %: 255 * duty_cycle
+0x17 - 01 - Pump Mode ??: Quiet = 0x00, Balanced = 0x01, Extreme = 0x02
 0x18 - FF - Unknown
 0x19 - FF - Unknown
 0x1A - 00 - Unknown
