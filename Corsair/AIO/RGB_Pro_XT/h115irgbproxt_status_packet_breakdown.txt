@@ -5,52 +5,61 @@
 0020   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
 0030   00 00 00 00 00 00 00 00 26 ff 00 00 00 00 00 5d   ........&......]
 
-ff -- pkt_header?
-78 -- pkt_count?
-11 -- firmware version (major.minor)
-16 -- firmware version (patch?)
-00 -- unknown
-a8 -- unknown
-f8 -- unknown
-00 -- LSB Temp
-1f -- MSB Temp
-00 -- unknown
-00 -- unknown
-88 -- unknown
-e8 -- unknown
-03 -- unknown
-88 -- unknown
-71 -- LSB Fan 1
-04 -- MSB Fan 2
-00 -- unknown
-88 -- unknown
-e8 -- unknown
-03 -- unknown
-88 -- unknown
-77 -- LSB Fan 2
-04 -- MSB Fan 2
-01 -- unknown
-bf -- unknown
-00 -- unknown
-00 -- unknown
-bf -- unknown
-0e -- LSB Pump
-09 -- MSB Pump
-00
+0000   ff 30 11 0f 00 24 1b 00 1f 00 00 89 e8 03 89 60   .0...$.........`
+0010   04 00 89 e8 03 89 75 04 01 aa 00 00 aa 1c 09 00   ......u.........
+0020   00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00   ................
+0030   00 00 00 00 00 00 00 00 1e ff 00 00 00 00 00 84   ................
+
+Offset -- Example -- Description -- Extra Info
+0x00 -- ff -- pkt_header?
+0x01 -- 78 -- Pkt Host Count? -- Increments on each Host Send?
+0x02 -- 11 -- firmware version (major.minor)
+0x03 -- 16 -- firmware version (patch?)
+0x04 -- 00 -- unknown
+0x05 -- a8 -- Pkt Device Count -- Increments on each Device Send?
+0x06 -- f8 -- unknown
+0x07 -- 00 -- LSB Temp
+0x08 -- 1f -- MSB Temp
+0x09 -- 00 -- Fan 1 Mode -- 00 = custom/profile curve, 02 = Fixed %, 04 = Fixed RPM
+0x0a -- 00 -- unknown
+0x0b -- 88 -- Fan 1 unknown
+0x0c -- e8 -- Fan 1 unknown
+0x0d -- 03 -- Fan 1 unknown
+0x0e -- 88 -- Fan 1 unknown
+0x0f -- 71 -- LSB Fan 1
+
+0x10 -- 04 -- MSB Fan 1
+0x11 -- 00 -- Fan 2 Mode -- 00 = custom/profile curve, 02 = Fixed %, 04 = Fixed RPM
+0x12 -- 88 -- Fan 2 unknown
+0x13 -- e8 -- Fan 2 unknown
+0x14 -- 03 -- Fan 2 unknown
+0x15 -- 88 -- Fan 2 unknown
+0x16 -- 77 -- LSB Fan 2
+0x17 -- 04 -- MSB Fan 2
+0x18 -- 01 -- Pump Mode --  Quiet = 0x00, Balanced = 0x01, Extreme = 0x02
+0x19 -- bf -- unknown
+0x1a -- 00 -- unknown
+0x1b -- 00 -- unknown
+0x1c -- bf -- unknown
+0x1d -- 0e -- LSB Pump 
+0x1e -- 09 -- MSB Pump
+0x1f -- 00
+
 ... 0x10 bytes of zeros
-00 
-00 
-00 
-00 
-00 
-00 
-00 
-00 
-26 
-ff 
-00 
-00 
-00 
-00 
-00 
-5d -- checksum ??
+
+0x30 -- 00 
+0x31 -- 00 
+0x32 -- 00 
+0x33 -- 00 
+0x34 -- 00 
+0x35 -- 00 
+0x36 -- 00 
+0x37 -- 00 
+0x38 -- 26 
+0x39 -- ff 
+0x3a -- 00 
+0x3b -- 00 
+0x3c -- 00 
+0x3d -- 00 
+0x3e -- 00 
+0x3f -- 5d -- checksum ??
